@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    height: 310px;
+    flex-direction: column;
+    width: 600px;
+    box-shadow: 5px 10px 10px #000;
+    border-top:5px solid #a53831;
+    border-bottom:5px solid  #a53831;
+}
+.todo{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+.todoval{
+    background: transparent;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 50;
+    flex-grow: 1;
+}
+.todo:has(.cbox:checked){
+    color:cornflowerblue;
+    background-color: #f7f7f7;
+    text-decoration: line-through;
+    order: 1;
+}
