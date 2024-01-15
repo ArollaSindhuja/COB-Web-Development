@@ -1,0 +1,210 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+    background-color: rgba(117, 14, 83, 0.89);
+}
+
+.main{
+    width: 750px;
+    background-color: #f7f7f7;
+    color:#000;
+    border-radius: 10px;
+    padding: 15px;
+}
+.wraper .inp-field{
+    opacity: 0;z-index: -999;
+    position: absolute;
+}
+
+.main .box{
+    padding: 10px 20px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.box .typing{
+    max-height: 255px;
+    overflow-y:auto;
+}
+
+.typing::-webkit-scrollbar{
+    width: 0;
+}
+
+
+.typing p{
+    font-size: 18px;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+
+.typing p span{
+    position: relative;
+  }
+  .typing p span.correct{
+    color: #1ac008;
+  }
+  .typing p span.incorrect{
+    color: #cb3439;
+    outline: 1px solid #fff;
+    background: #964c58a8;
+    border-radius: 4px;
+  }
+  
+
+.typing p span.active{
+    color: #ac2bb8;
+  }
+.typing p span.active::before{
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 5px;
+    background: #17A2B8;
+    animation: blink 1s ease-in-out infinite;
+}
+  @keyframes blink{
+    50%{ 
+      opacity: 1; 
+    }
+  }
+  
+
+.main .content{
+    display: flex;
+    margin-top: 15px;
+    padding: 12px 0;
+    border-top: 1px solid #ccc;
+    justify-content: space-between;
+    align-items: center;
+    /* transition: transform 0.3s ease; */
+}
+
+.content button:active{
+    transform: scale(0.97);
+}
+
+.content button{
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    width: 105px;
+    font-size: 18px;
+    color:#fff;
+    background-color: rgb(117, 14, 100);
+    padding: 8px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.content .result{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width:calc(100% - 140px);
+    justify-content: space-between;
+    
+}
+
+.result li{
+    height: 22px;
+    display: flex;
+    list-style: none;
+    position: relative;
+    align-items: center;
+}
+
+.result li:not(:first-child){
+    padding-left: 22px;
+    border-left: 1px solid #ccc;
+}
+
+.result li p{
+    font-size: 19px;
+
+}
+
+.result  li span{
+    display: block;
+    font-size: 20px;
+    margin-left: 10px;
+}
+li span b{
+    font-weight: 500;
+  }
+  li:not(:first-child) span{
+    font-weight: 500;
+  }
+  @media (max-width: 745px) {
+    .main{
+      padding: 20px;
+    }
+    .box .content{
+        padding: 20px 0;
+      }
+      .box .typing{
+        max-height: 100%;
+      }
+      .typing p{
+        font-size: 19px;
+        text-align: left;
+      }
+      .content button{
+        width: 100%;
+        font-size: 15px;
+        padding: 10px 0;
+        margin-top: 20px;
+      }
+      .content .result{
+        width: 100%;
+      }
+      .result li:not(:first-child){
+        border-left: 0;
+        padding: 0;
+      }
+      .result li p, 
+      .result li span{
+        font-size: 17px;
+    }
+  }
+  @media (max-width: 518px) {
+    .main .box{
+      padding: 10px 15px 0;
+    }
+    .typing p{
+      font-size: 18px;
+    }
+    .result li{
+      margin-bottom: 10px;
+    }
+    .content button{
+      margin-top: 10px;
+    }
+  
+
+.result  li:not(:first-child) span{
+    font-weight:500;
+}
+
+.result  li b{
+    font-weight: 500;
+}
+  }
